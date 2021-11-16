@@ -1,0 +1,13 @@
+ CREATE TABLE IF NOT EXISTS short_url (
+            id SERIAL PRIMARY KEY,
+            created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            original_url TEXT NOT NULL UNIQUE,
+            shortUrl TEXT NOT null UNIQUE,
+            total_hits TEXT
+        );
+        
+CREATE TABLE IF NOT EXISTS short_url_hit_data (
+            shortUrl TEXT NOT NULL,
+            hit_time_stamp TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+        );
+commit;
